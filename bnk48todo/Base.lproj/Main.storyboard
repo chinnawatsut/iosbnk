@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +14,80 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="bnk48todo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2iz-vM-dfM">
+                                <rect key="frame" x="20" y="170" width="285" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="enigma:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="BxN-Lc-7H8"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivO-eO-8HB">
+                                <rect key="frame" x="19.999999999999996" y="208" width="41.666666666666657" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_20180120_181024_703" translatesAutoresizingMaskIntoConstraints="NO" id="dtF-vk-8Mx">
+                                <rect key="frame" x="20" y="249" width="250" height="250"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="Mqj-Wz-BTB"/>
+                                    <constraint firstAttribute="width" secondItem="dtF-vk-8Mx" secondAttribute="height" multiplier="1:1" id="P1I-nM-Iik"/>
+                                    <constraint firstAttribute="width" constant="250" id="tOU-ug-I5T"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="boN-NY-NTC" appends="YES" id="Ng3-bL-u2R"/>
+                                </connections>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jdg-FP-0Rj">
+                                <rect key="frame" x="295" y="170" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="pnJ-Sz-bcm"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="setLabel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3jo-rJ-bU0"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2iz-vM-dfM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="8KV-E1-vRt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jdg-FP-0Rj" secondAttribute="trailing" constant="20" id="PUw-Wa-KwK"/>
+                            <constraint firstItem="dtF-vk-8Mx" firstAttribute="top" secondItem="ivO-eO-8HB" secondAttribute="bottom" constant="20" id="QtZ-1h-hyJ"/>
+                            <constraint firstItem="Jdg-FP-0Rj" firstAttribute="leading" secondItem="2iz-vM-dfM" secondAttribute="trailing" constant="5" id="TJD-ra-pC8"/>
+                            <constraint firstItem="ivO-eO-8HB" firstAttribute="top" secondItem="2iz-vM-dfM" secondAttribute="bottom" constant="8" id="dZg-dn-VJR"/>
+                            <constraint firstItem="dtF-vk-8Mx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="kCT-YA-Mqu"/>
+                            <constraint firstItem="ivO-eO-8HB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="r4u-Ic-xI5"/>
+                            <constraint firstItem="Jdg-FP-0Rj" firstAttribute="centerY" secondItem="2iz-vM-dfM" secondAttribute="centerY" id="v12-uA-5e9"/>
+                            <constraint firstItem="2iz-vM-dfM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="126" id="xQF-RI-KIb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="bnkLabel" destination="ivO-eO-8HB" id="dbM-Bd-LHZ"/>
+                        <outlet property="bnkTxtField" destination="2iz-vM-dfM" id="a8O-q8-Cml"/>
+                        <outlet property="photoImageView" destination="dtF-vk-8Mx" id="ezF-p7-PFo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="boN-NY-NTC">
+                    <connections>
+                        <action selector="setImageFromLibrary:" destination="BYZ-38-t0r" id="cec-xk-Z9t"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.26600985221674"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="IMG_20180120_181024_703" width="1280" height="1280"/>
+    </resources>
 </document>

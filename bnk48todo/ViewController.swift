@@ -7,18 +7,35 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController,UITextFieldDelegate {
+    
+    // MARK: - Properties
+    @IBOutlet weak var bnkLabel: UILabel!
+    @IBOutlet weak var bnkTxtField: UITextField!
+    @IBOutlet weak var photoImageView: UIImageView!
+    
+    // MARK: - ViewController func
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.bnkTxtField.delegate = self
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // MARK: - UITextFieldDelegate
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // hide keyboard
+        self.bnkTxtField.resignFirstResponder()
+        return true
     }
-
-
+    
+//    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
+//        self.bnkLabel.text = self.bnkTxtField.text
+//    }
+    
+    // MARK: - Actions.
+    @IBAction func setLabel(_ sender: Any) {
+        self.bnkLabel.text = self.bnkTxtField.text
+    }
+    @IBAction func setImageFromLibrary(_ sender: Any) {
+    }
 }
 
